@@ -7,9 +7,12 @@ Static bilingual website for `ib-domogalla.de`, prepared for GitHub Pages.
 - `index.html` - German homepage
 - `en/index.html` - English homepage
 - `assets/styles.css` - shared visual styling
+- `assets/logo-domogalla.*` - header logo assets
+- `assets/favicon-*`, `assets/favicon.ico`, `assets/apple-touch-icon.png` - browser/app icons
 - `impressum/index.html` - legal notice placeholder
 - `datenschutz/index.html` - privacy policy placeholder
 - `robots.txt` and `sitemap.xml` - basic SEO files
+- `site.webmanifest` - web app icon metadata
 - `CNAME` - custom domain for GitHub Pages
 
 ## Editing content
@@ -23,6 +26,19 @@ Search for these headings to update the main placeholders:
 - `Kontakt` / `Contact`
 
 The current email placeholder is `kontakt@ib-domogalla.de`. Replace it everywhere if a different address should be public.
+
+## Updating logo assets
+
+The current logo and favicon were prepared from screenshot sources with:
+
+```bash
+python3 tools/prepare_logo_assets.py \
+  --logo-source "/path/to/wide-logo-source.png" \
+  --icon-source "/path/to/square-icon-source.png" \
+  --out-dir assets
+```
+
+If proper original files become available later, use the same command with the better source files. The script exports the header logo, WebP fallback, favicon sizes, Apple touch icon and manifest icons.
 
 ## GitHub Pages setup
 

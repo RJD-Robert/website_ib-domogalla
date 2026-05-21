@@ -42,7 +42,7 @@ a {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 24px;
-  padding: 18px clamp(20px, 5vw, 72px);
+  padding: 12px clamp(20px, 5vw, 72px);
   background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
@@ -51,35 +51,22 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  min-width: 190px;
+  min-width: 0;
   text-decoration: none;
 }
 
-.brand-mark {
-  display: inline-grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  color: var(--white);
-  background: var(--green-dark);
-  border-radius: 8px;
-  font-weight: 800;
+.logo-brand {
+  width: clamp(220px, 22vw, 310px);
 }
 
-.brand strong,
-.brand small {
+.logo-brand picture,
+.logo-brand img {
   display: block;
 }
 
-.brand strong {
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-.brand small {
-  color: var(--muted);
-  font-size: 0.78rem;
+.logo-brand img {
+  width: 100%;
+  height: auto;
 }
 
 .site-nav {
@@ -158,7 +145,7 @@ h1,
 h2,
 h3,
 .button,
-.brand strong {
+.logo-brand {
   overflow-wrap: break-word;
 }
 
@@ -498,9 +485,15 @@ h3 {
 
   .site-nav {
     grid-column: 1 / -1;
+    grid-row: 2;
     justify-content: flex-start;
     overflow-x: auto;
     padding-bottom: 2px;
+  }
+
+  .language-link {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .hero,
@@ -536,8 +529,8 @@ h3 {
     min-width: 0;
   }
 
-  .brand small {
-    display: none;
+  .logo-brand {
+    width: min(240px, calc(100vw - 110px));
   }
 
   .site-nav {
